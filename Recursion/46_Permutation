@@ -1,0 +1,94 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    void backtrack(vector<int>& nums, vector<int>& temp, 
+                   vector<vector<int>>& ans, vector<bool>& used) {
+        
+        if(temp.size() == nums.size()) {
+            ans.push_back(temp);
+            return;
+        }
+
+        for(int i = 0; i < nums.size(); i++) {
+            if(used[i]) continue;
+
+            used[i] = true;
+            temp.push_back(nums[i]);
+
+            backtrack(nums, temp, ans, used);
+
+            // Backtrack
+            temp.pop_back();
+            used[i] = false;
+        }
+    }
+
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+        vector<int> temp;
+        vector<bool> used(nums.size(), false);
+
+        backtrack(nums, temp, ans, used);
+
+        return ans;
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter size: ";
+    cin >> n;
+
+    vector<int> nums(n);
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> nums[i];
+    }
+
+    Solution sol;
+    vector<vector<int>> result = sol.permute(nums);
+
+    cout << "\nAll Permutations:\n";
+    for(auto &perm : result) {
+        for(int x : perm) {
+            cout << x << " ";
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
+
+
+
+
+// 2nd method by using the next_permutation function from STL
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<int> nums(n);
+    for(int i = 0; i < n; i++) {
+        cin >> nums[i];
+    }
+
+    // Important: sort first to start from smallest permutation
+    sort(nums.begin(), nums.end());
+
+    cout << "All Permutations:\n";
+
+    do {
+        for(int x : nums) {
+            cout << x << " ";
+        }
+        cout << "\n";
+    } 
+    while(next_permutation(nums.begin(), nums.end()));
+
+    return 0;
+}
