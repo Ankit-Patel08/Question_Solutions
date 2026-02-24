@@ -1,4 +1,6 @@
- /* approch -> first we will divide the array into two parts one for motu 
+ // https://www.codechef.com/practice/course/2-star-difficulty-problems/DIFF1500/problems/MTYFRI
+
+ /* approach -> first we will divide the array into two parts one for motu 
  and one for tomu then we will sort the motu part in descending order and 
  tomu part in ascending order then we will swap the elements of both the parts
   until we have done k swaps or we have reached the end of any of the parts then
