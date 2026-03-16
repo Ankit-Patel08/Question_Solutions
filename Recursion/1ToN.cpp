@@ -13,11 +13,6 @@ void printNum(int n){
     cout<<n<< " ";     // to print it in acending order
 }
 
-void printEven(int n){
-    
-
-
-}
 
 int main(){
     int n;
