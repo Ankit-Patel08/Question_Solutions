@@ -6,7 +6,7 @@ This document contains all the Git commands needed to complete the feature branc
 
 ### Create branches
 ```bash
-git branch main
+git branch main               
 git branch login-feature
 ```
 
