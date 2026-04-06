@@ -44,3 +44,19 @@ int main() {
 
     return 0;
 }
+
+
+// Approach 2
+// More Optimized way of Approach 1 -> here we are saving the extra space whihc we were using in Approach 1
+void permute(vector<int>&nums, int idx){
+    if(idx == nums.size()){
+        for(auto x : num) cout<<x<<" ";
+        cout<<endl;
+        return;
+    }
+    for(int i = idx; i<num.size(); i++){
+        swap(nums[i], nums[idx]);
+        permute(nums, idx+1);
+        swap(nums[i], nums[idx]);
+    }
+}
