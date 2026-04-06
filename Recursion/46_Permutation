@@ -44,11 +44,3 @@ int main() {
 
     return 0;
 }
-
-
-
-
-// 2nd method by using the next_permutation function from STL
-#include <bits/stdc++.h>
-using namespace std;
-
